@@ -1,0 +1,55 @@
+// p1 main function that reads 3 integers and outputs the highest one
+void main() {
+	init i1, i2, i3 as integer;
+	i1 = integer.read();
+	i2 = integer.read();
+	i3 = integer.read();
+	check (i1 >= i2 and i1 >= i3) {
+		console.print(i1);
+	} else check (i2 >= i1 and i2 >= i1) {
+		console.print(i2);
+	} else console.print(i3);
+}
+
+/*
+	p2 main function that reads 2 numbers and if they are both odd calculates their average(rounded)
+*/
+void main() {
+	init i1, i2 as integer;
+	i1 = integer.read();
+	i2 = integer.read();
+	check (i1 % 2 and i2 % 2) {
+		console.print((i1 + i2) / 2);
+	} else {
+		console.print(string.format("Numbers \d and \d should both be even.", i1, i2));
+	}
+}
+
+// p3 main program that prints the sum of n numbers
+void main() {
+	init in as integer[];
+	init n, i, sum as integer;
+	n = integer.read();
+	i = 0;
+	sum = 0;
+	loop (check (n > 0)) {
+		in[i] = integer.read();
+		sum = sum + in[i];
+		i = i + 1;
+		n = n - 1;
+	}
+	console.print(sum);
+}
+
+// p1err main function that reads 3 integers and outputs the highest one, contains 2 errors
+void main() {
+	init #i1, i2, i3 as integer; // variable names requirements not met
+	i1 = integer.read(); 
+	i2 = integer.read();
+	i3 = integer.read();
+	chck (i1 >= i2 and i1 >= i3) { // check misspelt
+		console.print(i1);
+	} else check (i2 >= i1 and i2 >= i1) {
+		console.print(i2);
+	} else console.print(i3);
+}

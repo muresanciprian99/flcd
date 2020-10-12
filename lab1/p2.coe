@@ -1,0 +1,13 @@
+/*
+	main function that reads 2 numbers and if they are both odd calculates their average(rounded)
+*/
+void main() {
+	init i1, i2 as integer;
+	i1 = integer.read();
+	i2 = integer.read();
+	check (i1 % 2 and i2 % 2) {
+		console.print((i1 + i2) / 2);
+	} else {
+		console.print(string.format("Numbers \d and \d should both be even.", i1, i2));
+	}
+}

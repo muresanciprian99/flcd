@@ -1,0 +1,15 @@
+// main program that prints the sum of n numbers
+void main() {
+	init in as integer[];
+	init n, i, sum as integer;
+	n = integer.read();
+	i = 0;
+	sum = 0;
+	loop (check (n > 0)) {
+		in[i] = integer.read();
+		sum = sum + in[i];
+		i = i + 1;
+		n = n - 1;
+	}
+	console.print(sum);
+}
