@@ -1,0 +1,43 @@
+Syntax:
+
+program ::= "void" "main" "(" ")" "{" decllist ";" cmpdstmt "}"
+
+decllist ::= declaration | declaration ";" decllist
+
+declaration ::= "init" identifierlist "as" type
+
+identifierlist ::= IDENTIFIER|IDENTIFIER "," identifierlist
+
+type1 ::= "integer" | "string"
+
+arraydecl ::= "integer" "[" "]" | "string" "[" "]"
+
+type  ::= type1|arraydecl
+
+cmpdstmt ::= stmtlist
+
+stmtlist ::= stmt | stmt ";" stmtlist
+
+stmt ::= simplstmt | structstmt
+
+simplstmt ::= assignstmt | iostmt
+
+assignstmt ::= IDENTIFIER "=" expression
+
+expression ::= expression "+" term | term
+
+term ::= term "*" factor | factor
+
+factor ::= "(" expression ")" | IDENTIFIER
+
+iostmt ::= "READ" IDENTIFIER | "WRITE" IDENTIFIER 
+
+structstmt ::= cmpdstmt | ifstmt | whilestmt
+
+ifstmt ::= "check" condition "{" stmt [ "}" "else" stmt]
+
+whilestmt ::= "loop" condition "{" stmt "}"
+
+condition ::= expression RELATION expression
+
+RELATION ::= "<" | "<=" | "==" | "<>" | ">=" | ">"
