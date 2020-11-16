@@ -6,7 +6,7 @@ File -> SetOfStates"\n"InitialState"\n"FinalStates"\n"{Transition"\n"}
 SetOfStates = State{" "State}  
 State = Letter{Letter|Digit} 
 InitialState = State  
-FinalStates = State {" "State}  
+FinalStates = State{" "State}  
 Transition = State" "Element" "State  
 Element=Digit{Digit}  
 Letter = a | b | ... | z | A | B | ... | z  
