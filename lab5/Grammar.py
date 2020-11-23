@@ -1,15 +1,7 @@
-'''
-  
-S B C
-a b c
-S
-S a@b@S
-S a@B
-B b@C
-C c
-
-'''
 from collections import defaultdict
+
+__separator__ = '~'
+__filein__ = 'g1.txt'
 
 class Grammar:
     
@@ -28,7 +20,7 @@ class Grammar:
             self.productions = defaultdict(list)
             for line in fd:
                 nonTerminal, production, *tail = line.strip('\n').split()
-                self.productions[nonTerminal].append(production.split('@'))
+                self.productions[nonTerminal].append(production.split(__separator__))
 
 
     def getNonTerminals(self):
@@ -49,9 +41,10 @@ class Grammar:
 
 if __name__ == '__main__':
     grammar = Grammar()
-    grammar.readFromFile('g1.txt')
+    grammar.readFromFile(__filein__)
     print(grammar.getNonTerminals())
     print(grammar.getTerminals())
-    print(grammar.getProductions())
-    print(grammar.getProductionsForNonTerminal('S'))
     print(grammar.getStartSymbol())
+    print(grammar.getProductions())
+    nonTerminal = input('Insert non-terminal to print the production of: ').strip()
+    print(grammar.getProductionsForNonTerminal(nonTerminal))

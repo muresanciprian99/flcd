@@ -1,0 +1,34 @@
+program decllist type1 declaration arraydecl type stmtlist stmt simplstmt assignstmt expression term operation structstmt iostmt ifstmt whilestmt condition relation
+start end ; Integer String List Array OF [ ] = - + * / % READ WRITE ( ) : \n if else while < <= == <> >= >
+program
+program start:decllist:stmtlist:end
+decllist declaration
+decllist declaration~;~decllist
+type1 Integer
+type1 String
+type1 List
+declaration type~IDENTIFIER~
+arraydecl Array~[~nrConstant~]~OF~type1
+type type1
+type arraydecl
+stmtlist stmt
+stmtlist stmt~;~stmtlist
+stmt simplstmt
+stmt structstmt
+simplstmt assignstmt
+simplstmt iostmt
+assignstmt IDENTIFIER~=~expression
+expression expression~operation~term
+expression term
+term IDENTIFIER
+term nrConstant
+operation -~+~*~/~%
+iostmt READ~(~IDENTIFIER~)
+iostmt WRITE~(~IDENTIFIER~)~
+structstmt ifstmt
+structstmt whilestmt
+ifstmt if~condition~:~\n~stmt
+ifstmt if~condition~:~\n~stmt~else~stmt
+whilestmt while~condition~:~stmt
+condition expression~relation~expression
+relation <~<=~==~<>~>=~>
