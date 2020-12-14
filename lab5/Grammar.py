@@ -36,3 +36,13 @@ class Grammar:
 
     def getStartSymbol(self):
         return self.startSymbol
+
+    def findProductionWithDot(self, productionToFind):
+        index = 1
+        for productionKey in self.productions.keys():
+                for production in self.productions[productionKey]:  
+                    productionString = productionKey + '->' + production + '.'
+                    if (productionToFind == productionString):
+                        return index
+                    index += 1
+        return -1

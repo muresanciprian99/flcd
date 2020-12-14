@@ -5,7 +5,7 @@ from collections import defaultdict
 class ParserLR:
     __startingProduction__ = 'S\'->.S'
 
-    def __init__(self, grammar : Grammar):
+    def __init__(self, grammar):
         self.grammar = grammar
         __startingProduction__ = 'S\'->' + grammar.getStartSymbol()
 
@@ -55,10 +55,9 @@ class ParserLR:
                 state = currentStates[startingStateNumber]
                 for symbol in grammarSymbols:
                     result = self.goto(state, symbol)
-                    if result != []:
-                        parsingSteps[startingStateNumber].append((symbol, stateNumber)) # 0 : S 1
                     if result != [] and result not in currentStates.values():
                         collection[stateNumber] = result
+                        parsingSteps[startingStateNumber].append((symbol, stateNumber)) # 0 : S 1
                         stateNumber += 1
                         collectionChanged = True
         return collection, parsingSteps
