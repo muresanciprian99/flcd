@@ -1,7 +1,6 @@
 from collections import defaultdict
 
 __separator__ = '~'
-__filein__ = 'g1.txt'
 
 class Grammar:
     
@@ -37,14 +36,3 @@ class Grammar:
 
     def getStartSymbol(self):
         return self.startSymbol
-
-
-if __name__ == '__main__':
-    grammar = Grammar()
-    grammar.readFromFile(__filein__)
-    print(grammar.getNonTerminals())
-    print(grammar.getTerminals())
-    print(grammar.getStartSymbol())
-    print(grammar.getProductions())
-    nonTerminal = input('Insert non-terminal to print the production of: ').strip()
-    print(grammar.getProductionsForNonTerminal(nonTerminal))
