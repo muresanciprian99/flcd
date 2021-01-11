@@ -1,0 +1,10 @@
+{
+	init i1, i2 as integer;
+	i1 = read();
+	i2 = read();
+	check (i1 % 2 and i2 % 2) {
+		print((i1 + i2) / 2);
+	} else {
+		print(format("Numbers \d and \d should both be even.", i1, i2));
+	}
+}

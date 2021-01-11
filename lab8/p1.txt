@@ -1,0 +1,11 @@
+{
+	init i1, i2, i3 as integer;
+	i1 = read();
+	i2 = read();
+	i3 = read();
+	check (i1 >= i2 and i1 >= i3) {
+		print(i1);
+	} else check (i2 >= i1 and i2 >= i1) {
+		print(i2);
+	} else print(i3);
+}
